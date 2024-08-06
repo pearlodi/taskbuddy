@@ -38,14 +38,12 @@ const TodoList: React.FC = () => {
 
   const handleAddTodo = (
     text: string,
-    description: string,
     priority: "low" | "medium" | "high",
     dueDate?: string
   ) => {
     const newTodo = {
       id: Date.now(),
       text,
-      description,
       priority,
       dueDate,
       status: "incomplete" as "incomplete",

@@ -4,20 +4,18 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, M
 interface TodoModalProps {
   open: boolean;
   onClose: () => void;
-  onAdd: (text: string, description: string, priority: "low" | "medium" | "high", dueDate?: string) => void;
+  onAdd: (text: string, priority: "low" | "medium" | "high", dueDate?: string) => void;
 }
 
 const TodoModal: React.FC<TodoModalProps> = ({ open, onClose, onAdd }) => {
   const [text, setText] = useState("");
-  const [description, setDescription] = useState("");
   const [priority, setPriority] = useState<"low" | "medium" | "high">("low");
   const [dueDate, setDueDate] = useState<string | undefined>("");
 
   const handleAddClick = () => {
     if (text.trim()) {
-      onAdd(text, description, priority, dueDate);
+      onAdd(text, priority, dueDate);
       setText("");
-      setDescription("");
       setPriority("low");
       setDueDate("");
     }

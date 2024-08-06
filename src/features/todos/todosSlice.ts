@@ -6,7 +6,6 @@ interface Todo {
   completed: boolean;
   dueDate?: string;
   priority: 'low' | 'medium' | 'high';
-  description: string;
   status: 'incomplete' | 'inProgress' | 'completed';
 }
 
@@ -39,7 +38,6 @@ const todosSlice = createSlice({
         id: number;
         text: string;
         dueDate?: string;
-        description: string;
         priority: 'low' | 'medium' | 'high';
         status: 'incomplete';
       }>
@@ -50,7 +48,6 @@ const todosSlice = createSlice({
         completed: false,
         dueDate: action.payload.dueDate,
         priority: action.payload.priority,
-        description: action.payload.description,
         status: action.payload.status,
       };
       state.todos.push(newTodo);
@@ -73,7 +70,6 @@ const todosSlice = createSlice({
         id: number;
         text: string;
         dueDate?: string;
-        description: string;
         priority: 'low' | 'medium' | 'high';
         status: 'incomplete' | 'inProgress' | 'completed';
       }>

@@ -6,7 +6,6 @@ import { FaEdit, FaTrash, FaSave } from "react-icons/fa";
 interface TodoProps {
   id: number;
   text: string;
-  description: string;
   status: "incomplete" | "inProgress" | "completed";
   dueDate?: string;
   priority: "low" | "medium" | "high";
@@ -15,7 +14,6 @@ interface TodoProps {
 const Todo: React.FC<TodoProps> = ({
   id,
   text,
-  description,
   status,
   dueDate,
   priority,
@@ -26,7 +24,6 @@ const Todo: React.FC<TodoProps> = ({
   const [newText, setNewText] = useState(text);
   const [newDueDate, setNewDueDate] = useState(dueDate);
   const [newPriority, setNewPriority] = useState(priority);
-  const [newDescription, setNewDescription] = useState(description);
 
   const handleEdit = () => {
     setIsEditing(true);
@@ -39,7 +36,6 @@ const Todo: React.FC<TodoProps> = ({
         text: newText,
         dueDate: newDueDate,
         priority: newPriority,
-        description: newDescription,
         status: selectedStatus
       })
     );
@@ -65,9 +61,7 @@ const Todo: React.FC<TodoProps> = ({
             {dueDate && (
               <span>Due: {dueDate}</span>
             )}
-            {description && (
-              <div>Description: {description}</div>
-            )}
+            
           </div>
         </div>
       ) : (
