@@ -173,8 +173,8 @@ export default function Index() {
         </Box>
       </Box>
      </div>
-      <div >
-      <div className='p-4 flex md:hidden '>
+      <div className='p-4 flex md:hidden ' >
+      <div className='p-4  '>
       <Outlet />
       </div>
       <div className='gradient-background w-full h-20 bottom-0 fixed justify-between items-center px-10'>
