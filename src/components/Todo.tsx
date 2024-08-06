@@ -93,11 +93,11 @@ const Todo: React.FC<TodoProps> = ({
             <option value="medium" className="text-white bg-[#242424] text-sm">Medium</option>
             <option value="high" className="text-white bg-[#242424] text-sm">High</option>
           </select>
-          <textarea
+          {/* <textarea
             value={newDescription}
             onChange={(e) => setNewDescription(e.target.value)}
             className="inputs-edit"
-          />
+          /> */}
           <button onClick={handleSave} className="text-[#45d545] flex items-center text-sm gap-1">
             <FaSave className="cursor-pointer text-[#45d545]" />
             Save

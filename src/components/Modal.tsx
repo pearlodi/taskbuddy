@@ -34,12 +34,12 @@ const TodoModal: React.FC<TodoModalProps> = ({ open, onClose, onAdd }) => {
           onChange={(e) => setText(e.target.value)} 
           className="inputs mt-3"
         />
-        <input
+        {/* <input
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)} 
           className="inputs mt-3"
-        />
+        /> */}
         <FormControl fullWidth margin="dense">
           <InputLabel>Priority</InputLabel>
           <Select
