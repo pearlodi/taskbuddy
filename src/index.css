@@ -135,7 +135,9 @@ body {
 }
 
 .text-gradient,
-.css-bdhsul-MuiTypography-root-MuiDialogTitle-root {
+.css-bdhsul-MuiTypography-root-MuiDialogTitle-root,
+.css-uhb5lp 
+{
   background: linear-gradient(169deg, #d3d4d5 8.16%, #fff 150.61%);
   background-clip: text;
   -webkit-background-clip: text;
