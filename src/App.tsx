@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import React from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Index from "./pages/Index";
+// import TodoCalendar from "./components/Calendar";
 
-function App() {
+// const App: React.FC = () => {
+//   return (
+//     <Router>
+//       <Routes>
+//         <Route path="/" element={<Index />} />
+//         <Route path="/calendar" element={<TodoCalendar />} />
+//       </Routes>
+//     </Router>
+//   );
+// };
+
+// export default App;
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Index from "./pages/Index";
+import TodoCalendar from "./components/Calendar";
+import TodoList from './components/TodoList';
+import TaskStatusChart from './components/TaskStatusChart';
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route element={<Index />}>
+        <Route path="/" element={<TodoList />} />
+          <Route path="/calendar" element={<TodoCalendar />} />
+          <Route path="/chart" element={<TaskStatusChart />} />
+          <Route path="/calendar" element={<TodoCalendar />} />
+        </Route>
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

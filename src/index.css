@@ -1,13 +1,395 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background: url(./assets/images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --border-color: #FFFFFF60;
+  --text-color: white;
+}
+/* Color 1 */
+[data-color="color12"] {
+  --border-color: #FFFFFF60;
+  --text-color: white;
+}
+[data-color="color5"] {
+  --border-color: #12f412; /* Example color 1 */
+  --text-color: #12f412;
+}
+
+/* Color 2 */
+[data-color="color1"] {
+  --border-color: pink; /* Example color 2 */
+  --text-color: pink;
+}
+
+/* Color 3 */
+[data-color="color3"] {
+  --border-color: #0000ff; /* Example color 3 */
+  --text-color: #4343ff;
+}
+
+/* Color 4 */
+[data-color="color4"] {
+  --border-color: orange; /* Example color 4 */
+  --text-color: orange;
+}
+
+/* Color 5 */
+[data-color="color2"] {
+  --border-color: #d810d8; /* Example color 5 */
+  --text-color: #ff18ff;
+}
+
+/* Color 6 */
+[data-color="color6"] {
+  --border-color: red; /* Example color 6 */
+  --text-color: red;
+}
+
+/* Color 7 */
+[data-color="color7"] {
+  --border-color: #0ad2d2; /* Example color 7 */
+  --text-color: #0ad2d2;
+}
+
+/* Color 8 */
+[data-color="color8"] {
+  --border-color: yellow; /* Example color 8 */
+  --text-color: yellow;
+}
+
+/* Color 9 */
+[data-color="color9"] {
+  --border-color: gray; /* Example color 9 */
+  --text-color: gray;
+}
+
+/* Color 10 */
+[data-color="color10"] {
+  --border-color: #ff8383; /* Example color 10 */
+  --text-color: #ff8383;
+}
+[data-color="color11"] {
+  --border-color: #e91e63; /* Example color 10 */
+  --text-color: rgb(233,30,99);
+}
+
+
+.css-19z1ozs-MuiPaper-root-MuiAppBar-root,
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper,
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper,
+.css-1191obr-MuiPaper-root-MuiAppBar-root,
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper,
+.gradient-background {
+  border:1px solid var(--border-color) !important;
+  /* border: 1px solid #FFFFFF60 !important; */
+  background: linear-gradient(111deg, rgba(255, 255, 255, .14) 1.21%, rgba(196, 196, 196, .02) 100%) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(15px) !important;
+}
+.dynamic-text{
+  color: var(--text-color) !important;;
+}
+.gradient {
+  border:1px solid var(--border-color) !important;
+  background: linear-gradient(111deg, rgba(255, 255, 255, .14) 1.21%, rgba(196, 196, 196, .02) 100%) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(15px) !important;
+}
+.gradient-welcome {
+  border-bottom:1px solid var(--border-color) !important;
+  background: linear-gradient(111deg, rgba(255, 255, 255, .14) 1.21%, rgba(196, 196, 196, .02) 100%) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(15px) !important;
+}
+.border {
+  border: 0.8px solid #ffffff17;
+  border-radius: 12px;
+}
+.css-ahj2mt-MuiTypography-root{
+  font-size: 18px !important;
+}
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  background: linear-gradient(122deg, #FFF 30.71%, #505356 153.64%) !important;
+  color: black !important;
+}
+
+.text-gradient,
+.css-bdhsul-MuiTypography-root-MuiDialogTitle-root {
+  background: linear-gradient(169deg, #d3d4d5 8.16%, #fff 150.61%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.search {
+  width: 380px !important;
+  height: 40px;
+  padding: 8px;
+  background-color: transparent !important;
+  border:1px solid var(--border-color) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(25px) !important;
+  max-width: 100% !important;
+  border-radius: 10px !important;
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  border: 0.5px solid #ffffffaf !important;
+  color: white !important;
+  border-radius: 8px !important;
+}
+
+.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root,
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+  color: white !important;
+}
+
+.inputs {
+  border: 0.5px solid #ffffffaf !important;
+  color: white !important;
+  height: 40px;
+  border-radius: 8px !important;
+  width: 100%;
+  height: 55px;
+  padding: 8px;
+  background-color: transparent !important;
+  max-width: 100% !important;
+  border-radius: 8px !important;
+}
+
+.inputs-edit {
+  border: 0.5px solid #ffffffaf !important;
+  color: white !important;
+  height: 25px;
+  border-radius: 8px !important;
+  font-size: 10px;
+  width: 100%;
+  font-weight: normal;
+  padding: 8px;
+  background-color: transparent !important;
+  max-width: 100% !important;
+  border-radius: 3px !important;
+  margin-top: 10px;
+}
+
+.select {
+  width: 100%;
+  background-color: transparent !important;
+  border: 0.5px solid #ffffffaf !important;
+  color: white;
+  height: 25px;
+  font-size: 10px;
+}
+
+.css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop {
+  background-color: rgb(0 0 0 / 63%) !important;
+}
+
+.css-1m5i5w0-MuiButtonBase-root-MuiListItemButton-root {
+  color: white !important;
+  opacity: 0.5;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  fill: white !important;
+  opacity: 0.5;
+}
+
+.rbc-calendar {
+  background-color: rgba(255, 255, 255, 0.189);
+  border: 0.5px solid #ffffffaf !important;
+
+}
+
+.rbc-show-more {
+  color: white !important;
+}
+
+.rbc-date-cell {
+  color: white;
+}
+
+.rbc-today {
+  background-color: #00000082 !important;
+}
+
+.rbc-event,
+.rbc-day-slot .rbc-background-event {
+  background-color: hsl(0deg 0% 52.76%) !important;
+}
+
+.rbc-calendar *,
+.rbc-calendar *:before,
+.rbc-calendar *:after {
+  color: white;
+}
+
+.rbc-toolbar button:active,
+.rbc-toolbar button.rbc-active {
+  background-color: #00000082 !important;
+}
+
+.rbc-btn-group>button:not(:first-child):not(:last-child),
+.rbc-btn-group>button:not(:first-child):not(:last-child),
+.rbc-btn-group>button:last-child:not(:first-child),
+.rbc-btn-group>button:first-child:not(:last-child) {
+  color: white !important;
+}
+
+.rbc-month-row+.rbc-month-row {
+  border-top: 0.5px solid #dddddd5d !important;
+
+}
+
+.rbc-day-bg+.rbc-day-bg {
+  border-left: 0.5px solid #dddddd5d !important;
+}
+
+canvas {
+  height: 500px !important;
+}
+
+/* TaskStatusChart.module.css */
+.chartContainer {
+  width: 800px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.dropdown {
+  width: 150px;
+  background-color: #f0f0f0;
+  color: #333;
+  border-color: 0.5px solid #ffffffaf !important;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dropdown:focus {
+  outline: none;
+  /* Remove default outline on focus */
+  border-color: 0.5px solid #ffffffaf !important;
+  box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.25);
+  /* Shadow on focus */
+}
+.color-selector {
+  position: fixed;
+  right: 0;
+  top: 18%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.color-selector.open .color-panel {
+  transform: translateX(0);
+}
+
+.settings-icon {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.settings-icon {
+  opacity: 1;
+}
+
+.color-selector.open .settings-icon {
+  opacity: 0;
+}
+
+.color-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  background: linear-gradient(122deg,  #505356 153.64%, #FFF 30.71%) !important;
+  border-left: 1px solid var(--border-color);
+ border-top-left-radius: 12px;
+ border-bottom-left-radius: 12px;
+  padding: 15px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.color-panel.open {
+  transform: translateX(0);
+}
+
+.close-icon {
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.color-panel button {
+  display: block;
+  margin: 10px 0;
+}
+
+
+
+@media (max-width: 770px) {
+  .css-2dum1v-MuiDrawer-docked {
+    display: none !important;
+  }
+
+  .css-p55zm9-MuiButtonBase-root-MuiIconButton-root {
+    display: none !important;
+  }
+
+  .search {
+    width: 100% !important;
+  }
+  canvas{
+    height: 300px !important;
+  }
+  .rbc-calendar {
+  margin: 0px !important;
+}
+.css-zxdg2z{
+  padding: 10px !important;
+}
+.calendar-mobile{
+  max-width: 90vw;
+  overflow: scroll;
+}
+.mobile-calendar{
+  width: 600px;
+}
+.css-i4bv87-MuiSvgIcon-root {
+width: 32px !important;
+height: 32px !important;
+}
+.css-ahj2mt-MuiTypography-root{
+  font-size: 10px !important;
+}
+.css-gepadz-MuiTypography-root{
+  font-size: 15px !important;
+}
 }
