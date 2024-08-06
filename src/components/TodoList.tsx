@@ -10,7 +10,6 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import { Typography, Box } from '@mui/material';
 import {
   DragDropContext,
   Draggable,
@@ -87,7 +86,7 @@ const TodoList: React.FC = () => {
   };
   return (
     <div>
-      <div className="md:flex items-center justify-between w-full gap-2">
+      <div className="md:flex items-center justify-between w-full gap-2 mt-6 md:mt-0">
         <div className="flex gap-2">
           <Button
             onClick={() => setModalOpen(true)}
@@ -124,29 +123,29 @@ const TodoList: React.FC = () => {
         {filteredIncompleteTodos.length === 0 &&
           filteredInProgressTodos.length === 0 &&
           filteredCompletedTodos.length === 0 ? (
-            <Box className="text-center px-4 md:px-10 py-4 rounded-lg shadow-lg">
-            <Typography variant="h3" className="font-extrabold dynamic-text mb-4">
+            <div className="text-center px-4 md:px-10 py-4 rounded-lg shadow-lg">
+            <h1  className="font-extrabold dynamic-text text-2xl md:text-4xl mb-4">
               Welcome to TaskBuddy
-            </Typography>
-            <Box className="text-3xl mt-3 text-white space-y-3">
-              <Box className="flex items-center  gap-2">
+            </h1>
+            <div className="text-3xl mt-3 text-white space-y-3">
+              <div className="flex items-center text-sm md:text-lg  gap-2">
                 <AddCircleOutlineIcon className="md:text-3xl" />
-                <Typography>Add New Task</Typography>
-              </Box>
-              <Box className="flex items-center  gap-2">
+                <p>Add New Task</p>
+              </div>
+              <div className="flex items-center text-sm md:text-lg  gap-2">
                 <CalendarTodayIcon className="md:text-3xl" />
-                <Typography>View your task on a calendar</Typography>
-              </Box>
-              <Box className="flex items-center  gap-2">
+                <p>View your task on a calendar</p>
+              </div>
+              <div className="flex items-center text-sm md:text-lg  gap-2">
                 <BarChartIcon className="md:text-3xl" />
-                <Typography>Get Real-time visualization of your tasks </Typography>
-              </Box>
-              <Box className="flex items-center  gap-2">
+                <p>Get Real-time visualization of your tasks </p>
+              </div>
+              <div className="flex items-center text-sm md:text-lg  gap-2">
                 <RocketLaunchIcon className="md:text-4xl" />
-                <Typography>What are you waiting for?!</Typography>
-              </Box>
-            </Box>
-          </Box>
+                <p>What are you waiting for?!</p>
+              </div>
+            </div>
+          </div>
         ) : (
           <DragDropContext onDragEnd={onDragEnd}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ">

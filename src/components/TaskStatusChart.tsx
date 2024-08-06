@@ -72,7 +72,7 @@ const TaskStatusChart: React.FC = () => {
 
   return (
     <div>
-      <div className='flex-col md:flex-row flex justify-end md:items-center'>
+      <div className='flex-col md:flex-row flex justify-end md:items-center mt-8 md:mt-0'>
         <label htmlFor="chartType" className='text-white font-bold'>Please Select Chart Type: </label>
         <select
           id="chartType"
@@ -85,7 +85,7 @@ const TaskStatusChart: React.FC = () => {
           <option value="line">Line</option>
         </select>
       </div>
-      <div className='flex items-center justify-center mt-14'>
+      <div className='flex  md:mt-0 mt-14'>
         {todos.length === 0 ? (
           <p className='text-center text-white font-bold text-xl'>
             Please add a new task to visualize.

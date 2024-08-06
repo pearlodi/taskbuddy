@@ -106,7 +106,7 @@ export default function Index() {
 
   return (
     <div>
-     <div className='hidden md:flex'>
+     <div className='hidden md:block'>
      <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar position="fixed" open={open}>
@@ -174,9 +174,13 @@ export default function Index() {
       </Box>
      </div>
       <div className='md:hidden ' >
-      <div className='p-4'>
+      <div className='gradient-background w-full h-12 top-0 flex fixed justify-between items-center px-4'>
+      <p className='text-gradient text-2xl font-bold '>Task buddy</p>
+      </div>
+      <div className='p-4 mt-14'>
       <Outlet />
       </div>
+      
       <div className='gradient-background w-full h-20 bottom-0 flex fixed justify-between items-center px-10'>
        <div className='flex justify-between w-full'>
        <div className='flex flex-col justify-center text-gradient items-center'>

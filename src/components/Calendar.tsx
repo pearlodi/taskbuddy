@@ -28,13 +28,15 @@ const CalendarComponent: React.FC = () => {
   }));
 
   return (
-    <div className="calendar-mobile">
-      <div className="mobile-calendar">
-        {events.length === 0 ? (
-          <p className='text-center text-white font-bold text-xl'>
-            Please add a new task to view calendar
+ 
+   <div>
+         {events.length === 0 ? (
+          <p className='text-center text-white font-bold text-xl  md:mt-0 mt-8'>
+            Please add a new task to view
           </p>
         ) : (
+            <div className="calendar-mobile md:mt-0 mt-8">
+            <div className="mobile-calendar">
           <Calendar
             localizer={localizer}
             events={events}
@@ -42,9 +44,11 @@ const CalendarComponent: React.FC = () => {
             endAccessor="end"
             style={{ height: 500, margin: "50px" }}
           />
+          </div>
+          </div>
         )}
-      </div>
-    </div>
+     
+   </div>
   );
 };
 

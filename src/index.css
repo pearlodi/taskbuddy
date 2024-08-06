@@ -174,7 +174,10 @@ body {
   color: white !important;
 }
 
-.inputs {
+.inputs,
+.css-qiwgdb.css-qiwgdb.css-qiwgdb,
+.css-1x5jdmq:invalid {
+
   border: 0.5px solid #ffffffaf !important;
   color: white !important;
   height: 40px;
@@ -186,7 +189,12 @@ body {
   max-width: 100% !important;
   border-radius: 8px !important;
 }
-
+.css-1ujsas3,
+.css-1ujsas3 ,
+.css-ohyacs
+{
+  color: white;
+}
 .inputs-edit {
   border: 0.5px solid #ffffffaf !important;
   color: white !important;
@@ -279,6 +287,7 @@ body {
 
 canvas {
   height: 500px !important;
+  width: 80% !important;
 }
 
 /* TaskStatusChart.module.css */
