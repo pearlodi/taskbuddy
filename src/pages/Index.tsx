@@ -174,10 +174,10 @@ export default function Index() {
       </Box>
      </div>
       <div >
-      <div className='p-4'>
+      <div className='p-4 flex md:hidden '>
       <Outlet />
       </div>
-      <div className='gradient-background w-full h-20 bottom-0 fixed flex md:hidden justify-between items-center px-10'>
+      <div className='gradient-background w-full h-20 bottom-0 fixed justify-between items-center px-10'>
         <div className='flex flex-col justify-center text-gradient items-center'>
         <Link to="/"><AddHomeIcon className='text-[40px]'/></Link>
         <p>Home</p>
