@@ -21,7 +21,7 @@ import AddHomeIcon from '@mui/icons-material/AddHome';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
-
+import logo from '../assets/images/logo.png'
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -123,9 +123,9 @@ export default function Index() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap component="div">
-              Task Buddy
-            </Typography>
+            <div className='w-[200px]'>
+              <img src={logo} alt='logo' className='w-full' />
+            </div>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -174,10 +174,12 @@ export default function Index() {
       </Box>
      </div>
       <div className='md:hidden ' >
-      <div className='gradient-background w-full h-12 top-0 flex fixed justify-between items-center px-4'>
-      <p className='text-gradient text-2xl font-bold '>Task buddy</p>
+      <div className='gradient-background w-full h-12 top-0 z-10 flex fixed justify-between items-center px-4'>
+      <div className='w-[130px]'>
+              <img src={logo} alt='logo'  className='w-full'/>
+            </div>
       </div>
-      <div className='p-4 mt-14'>
+      <div className='p-4 mt-14 mb-[132px]'>
       <Outlet />
       </div>
       
