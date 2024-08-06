@@ -7,7 +7,7 @@ const ColorSelector: React.FC = () => {
 
   // Load the color from localStorage when the component mounts
   useEffect(() => {
-    const savedColor = localStorage.getItem("selectedColor") || "color1";
+    const savedColor = localStorage.getItem("selectedColor") || "color12";
     setSelectedColor(savedColor);
     document.documentElement.setAttribute("data-color", savedColor);
   }, []);
