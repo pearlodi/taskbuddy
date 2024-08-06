@@ -135,15 +135,21 @@ body {
 }
 
 .text-gradient,
-.css-bdhsul-MuiTypography-root-MuiDialogTitle-root,
-.css-uhb5lp 
+.css-bdhsul-MuiTypography-root-MuiDialogTitle-root
+
 {
   background: linear-gradient(169deg, #d3d4d5 8.16%, #fff 150.61%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.css-uhb5lp {
+  border: 1px solid var(--border-color) !important;
+  /* border: 1px solid #FFFFFF60 !important; */
+  background: linear-gradient(111deg, rgba(255, 255, 255, .14) 1.21%, rgba(196, 196, 196, .02) 100%) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(15px) !important;
+}
 .search {
   width: 380px !important;
   height: 40px;
