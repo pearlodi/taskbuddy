@@ -106,7 +106,8 @@ export default function Index() {
 
   return (
     <div>
-      <Box sx={{ display: 'flex' }}>
+     <div className='hidden md:flex'>
+     <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar position="fixed" open={open}>
           <Toolbar>
@@ -171,6 +172,7 @@ export default function Index() {
           <Outlet />
         </Box>
       </Box>
+     </div>
       <div className='gradient-background w-full h-20 bottom-0 fixed flex md:hidden justify-between items-center px-10'>
         <div className='flex flex-col justify-center text-gradient items-center'>
         <Link to="/"><AddHomeIcon className='text-[40px]'/></Link>
