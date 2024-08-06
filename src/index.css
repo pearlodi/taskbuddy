@@ -98,7 +98,10 @@ body {
   backdrop-filter: blur(15px) !important;
 }
 .css-168noda,
-.css-bpnhhg .MuiDrawer-paper {
+.css-bpnhhg .MuiDrawer-paper,
+.css-vwd6ro,
+.css-1l8j5k8 
+{
   border:1px solid var(--border-color) !important;
   /* border: 1px solid #FFFFFF60 !important; */
   background: linear-gradient(111deg, rgba(255, 255, 255, .14) 1.21%, rgba(196, 196, 196, .02) 100%) !important;
