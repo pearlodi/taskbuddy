@@ -173,6 +173,10 @@ export default function Index() {
         </Box>
       </Box>
      </div>
+      <div >
+      <div className='p-4'>
+      <Outlet />
+      </div>
       <div className='gradient-background w-full h-20 bottom-0 fixed flex md:hidden justify-between items-center px-10'>
         <div className='flex flex-col justify-center text-gradient items-center'>
         <Link to="/"><AddHomeIcon className='text-[40px]'/></Link>
@@ -187,6 +191,7 @@ export default function Index() {
         <p>Chart</p>
         </div>
       </div>
+        </div>
     </div>
   );
 }

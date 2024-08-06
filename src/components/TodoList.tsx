@@ -157,7 +157,7 @@ const TodoList: React.FC = () => {
                     {...provided.droppableProps}
                     ref={provided.innerRef}
                   >
-                    <h2 className=" text-xl font-bold  text-gradient">Incomplete Tasks</h2>
+                    <h2 className=" text-sm md:text-xl font-bold  text-gradient">Incomplete Tasks</h2>
                     {filteredIncompleteTodos.map((todo, index) => (
                       <Draggable
                         key={todo.id}
@@ -186,7 +186,7 @@ const TodoList: React.FC = () => {
                     {...provided.droppableProps}
                     ref={provided.innerRef}
                   >
-                    <h2 className=" text-xl font-bold text-gradient ">In Progress</h2>
+                    <h2 className=" text-sm md:text-xl font-bold text-gradient ">In Progress</h2>
                     {filteredInProgressTodos.map((todo, index) => (
                       <Draggable
                         key={todo.id}
@@ -215,8 +215,8 @@ const TodoList: React.FC = () => {
                     {...provided.droppableProps}
                     ref={provided.innerRef}
                   >
-                    <h2 className=" text-xl font-bold text-gradient">Completed Tasks</h2>
-                    {filteredCompletedTodos.map((todo, index) => (
+                    <h2 className=" text-sm md:text-xl font-bold text-gradient">Completed Tasks</h2>
+                    {filteredCompletedTodos.map((todo, index: number) => (
                       <Draggable
                         key={todo.id}
                         draggableId={todo.id.toString()}

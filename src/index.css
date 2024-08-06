@@ -97,6 +97,14 @@ body {
   -webkit-backdrop-filter: blur(15px) !important;
   backdrop-filter: blur(15px) !important;
 }
+.css-168noda,
+.css-bpnhhg .MuiDrawer-paper {
+  border:1px solid var(--border-color) !important;
+  /* border: 1px solid #FFFFFF60 !important; */
+  background: linear-gradient(111deg, rgba(255, 255, 255, .14) 1.21%, rgba(196, 196, 196, .02) 100%) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(15px) !important;
+}
 .dynamic-text{
   color: var(--text-color) !important;;
 }
@@ -119,7 +127,9 @@ body {
 .css-ahj2mt-MuiTypography-root{
   font-size: 18px !important;
 }
-.css-sghohy-MuiButtonBase-root-MuiButton-root {
+.css-sghohy-MuiButtonBase-root-MuiButton-root,
+.css-1hw9j7s 
+{
   background: linear-gradient(122deg, #FFF 30.71%, #505356 153.64%) !important;
   color: black !important;
 }
