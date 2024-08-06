@@ -212,7 +212,9 @@ body {
   opacity: 0.5;
 }
 
-.css-i4bv87-MuiSvgIcon-root {
+.css-i4bv87-MuiSvgIcon-root,
+.css-vubbuv
+{
   fill: white !important;
   opacity: 0.5;
 }
@@ -392,7 +394,9 @@ canvas {
 .mobile-calendar{
   width: 600px;
 }
-.css-i4bv87-MuiSvgIcon-root {
+.css-i4bv87-MuiSvgIcon-root,
+.css-vubbuv
+{
 width: 32px !important;
 height: 32px !important;
 }
