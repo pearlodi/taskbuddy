@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+// Define Todo and Event interfaces
 interface Todo {
   id: number;
   text: string;
@@ -23,11 +24,23 @@ interface TodosState {
   events: Event[];
 }
 
+// Cleanup function to remove duplicates
+const cleanUpLocalStorage = () => {
+  const todosFromStorage = JSON.parse(localStorage.getItem('todos') || '[]') as Todo[];
+  const uniqueTodos = Array.from(new Map(todosFromStorage.map(todo => [todo.id, todo])).values());
+  localStorage.setItem('todos', JSON.stringify(uniqueTodos));
+};
+
+// Initial state
+const todosFromStorage = JSON.parse(localStorage.getItem('todos') || '[]') as Todo[];
+const uniqueTodosFromStorage = Array.from(new Map(todosFromStorage.map(todo => [todo.id, todo])).values());
+
 const initialState: TodosState = {
-  todos: JSON.parse(localStorage.getItem('todos') || '[]'),
+  todos: uniqueTodosFromStorage,
   events: [],
 };
 
+// Slice definition
 const todosSlice = createSlice({
   name: 'todos',
   initialState,
@@ -50,19 +63,23 @@ const todosSlice = createSlice({
         priority: action.payload.priority,
         status: action.payload.status,
       };
-      state.todos.push(newTodo);
 
-      if (newTodo.dueDate) {
-        state.events.push({
-          id: newTodo.id,
-          title: newTodo.text,
-          start: new Date(newTodo.dueDate),
-          end: new Date(newTodo.dueDate),
-          allDay: true,
-        });
+      // Prevent adding duplicates
+      if (!state.todos.some(todo => todo.id === newTodo.id)) {
+        state.todos.push(newTodo);
+
+        if (newTodo.dueDate) {
+          state.events.push({
+            id: newTodo.id,
+            title: newTodo.text,
+            start: new Date(newTodo.dueDate),
+            end: new Date(newTodo.dueDate),
+            allDay: true,
+          });
+        }
+
+        localStorage.setItem('todos', JSON.stringify(state.todos));
       }
-
-      localStorage.setItem('todos', JSON.stringify(state.todos));
     },
     editTodo: (
       state,
@@ -91,9 +108,9 @@ const todosSlice = createSlice({
             allDay: true,
           };
         }
-      }
 
-      localStorage.setItem('todos', JSON.stringify(state.todos));
+        localStorage.setItem('todos', JSON.stringify(state.todos));
+      }
     },
     deleteTodo: (state, action: PayloadAction<number>) => {
       state.todos = state.todos.filter(todo => todo.id !== action.payload);
@@ -125,18 +142,25 @@ const todosSlice = createSlice({
       const targetTodos = state.todos.filter(todo => todo.status === targetList);
 
       const [movedTodo] = sourceTodos.splice(sourceIndex, 1);
-      targetTodos.splice(destinationIndex, 0, movedTodo);
 
-      state.todos = [
-        ...state.todos.filter(todo => todo.status !== sourceList && todo.status !== targetList),
-        ...sourceTodos.map(todo => ({ ...todo, status: sourceList })),
-        ...targetTodos.map(todo => ({ ...todo, status: targetList })),
-      ];
+      // Ensure no duplicates
+      if (!targetTodos.some(todo => todo.id === movedTodo.id)) {
+        targetTodos.splice(destinationIndex, 0, movedTodo);
 
-      localStorage.setItem('todos', JSON.stringify(state.todos));
+        state.todos = [
+          ...state.todos.filter(todo => todo.status !== sourceList && todo.status !== targetList),
+          ...sourceTodos.map(todo => ({ ...todo, status: sourceList })),
+          ...targetTodos.map(todo => ({ ...todo, status: targetList })),
+        ];
+
+        localStorage.setItem('todos', JSON.stringify(state.todos));
+      }
     },
   },
 });
+
+// Run cleanup on app initialization
+cleanUpLocalStorage();
 
 export const { addTodo, editTodo, deleteTodo, updateTodoStatus, reorderTodos } = todosSlice.actions;
 export default todosSlice.reducer;

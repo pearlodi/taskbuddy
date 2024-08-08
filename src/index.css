@@ -161,6 +161,7 @@ body {
   width: 380px !important;
   height: 40px;
   padding: 8px;
+  color: white;
   background-color: transparent !important;
   border:1px solid var(--border-color) !important;
   -webkit-backdrop-filter: blur(15px) !important;
@@ -294,7 +295,6 @@ body {
 
 canvas {
   height: 500px !important;
-  width: 80% !important;
 }
 
 /* TaskStatusChart.module.css */
