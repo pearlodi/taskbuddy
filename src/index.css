@@ -83,6 +83,10 @@ body {
   --border-color: #e91e63; /* Example color 10 */
   --text-color: rgb(233,30,99);
 }
+.css-yb0lig,
+.css-1nmt8ps {
+    color: white !important;
+}
 
 
 .css-19z1ozs-MuiPaper-root-MuiAppBar-root,
